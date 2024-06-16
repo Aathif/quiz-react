@@ -1,0 +1,70 @@
+Questionnaires
+Frontend Components
+
+A react application will be developed with the mentioned components/pages and proper routing.
+
+ 
+
+Home Page
+
+This component will be available at the base route (“/”).
+Display a list of all the active Questionnaires. Get the list from the json file api/questionnaire.json.
+Each item in the list will have the title, the number of questions and a attempt button.
+For title => data-testid = “title-{question name}” Ex :- “title-Question Bank -1”.
+For no. of question => data-testid = “questionnaire-number”.
+For attempt button => data-testid = “attempt”.
+On clicking the attempt the quiz should start. It should redirect to “/questionnaire/:id”Id of the questionnaire.…
+ 
+
+
+ 
+
+Quiz Page
+
+for all the data format for the component you can see in src/api/questionBank.json
+
+This component will be available at the (“/questionnaire/:id”) route..
+The component should get questions src/api/questionBank.json having the same same id which is in url param…
+It should show one question with it’s four option at one time.
+
+
+User can choose only one option at a time but he/she can choose to change it.
+It should contain two button Ok andNext,
+Once the user is sure about the answer he/she can click ok button to check whether the answer is correct or not.
+Validate the answer by green color for correct and red color for wrong only after clicking OK button. 
+The message for the answer validation should be same as in images.
+
+
+
+
+
+ 
+
+                      For Question => data-testid = “question”.
+                      For Option input => data-testid = “option-{no.of option}”, For Ex :- data-testid = “option-1”. For OK button => data-testid = “ok”.
+                      For Next button => data-testid = “next”.
+                      For answer validator message => data-testid = “validate-answer”.
+
+To go to next question you can click next button, but only after the user has clicked ok button.
+At last you have to show the score of the user.At last question when you click next button it show the score.
+
+
+
+
+For total Score => data-testid = “score”.
+For total correct => data-testid = “correct-question”. 
+For total incorrect => data-testid = “incorrect-question”.
+ 
+It should have the timer for each question of 10 sec.
+Once the time is over the answer is marked wrong until the user has not clicked ok button.
+If user has not mark any option you will declare it as a wrong answer.
+After the 10sec timer is over, the next question should be moved automatically.
+ 
+
+Notes
+
+●  Use proper state management and maintain the reactivity of components.
+
+●  Bootstrap and Font Awesome have been added for styling and icons.
+
+●  Do not remove or modify any data-testid attributes.
